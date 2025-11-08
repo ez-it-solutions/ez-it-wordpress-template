@@ -20,44 +20,44 @@ class Admin_Page {
         
         // Get current theme (default to dark)
         $current_theme = get_option('ez_dh_theme', 'dark');
-        $theme_class = $current_theme === 'light' ? 'ezdh-light' : 'ezdh-dark';
+        $theme_class = $current_theme === 'light' ? 'ezit-light' : 'ezit-dark';
         
         // Get current tab
         $current_tab = isset($_GET['tab']) ? sanitize_key($_GET['tab']) : 'dashboard';
 
         ?>
-        <div class="ezdh-fullpage <?php echo esc_attr($theme_class); ?>" id="ezdh-main-wrap" data-theme="<?php echo esc_attr($current_theme); ?>">
+        <div class="ezit-fullpage <?php echo esc_attr($theme_class); ?>" id="ezit-main-wrap" data-theme="<?php echo esc_attr($current_theme); ?>">
             
             <!-- Header with Title and Theme Switcher -->
-            <div class="ezdh-header">
-                <h1 class="ezdh-title">Ez IT Solutions – DreamHost SSO Utility</h1>
-                <button type="button" id="ezdh-theme-toggle" class="button ezdh-theme-btn">
-                    <span class="ezdh-theme-icon"><?php echo $current_theme === 'dark' ? '☀️' : '🌙'; ?></span>
-                    <span class="ezdh-theme-text"><?php echo $current_theme === 'dark' ? 'Light Mode' : 'Dark Mode'; ?></span>
+            <div class="ezit-header">
+                <h1 class="ezit-title">Ez IT Solutions – DreamHost SSO Utility</h1>
+                <button type="button" id="ezit-theme-toggle" class="button ezit-theme-btn">
+                    <span class="ezit-theme-icon"><?php echo $current_theme === 'dark' ? '☀️' : '🌙'; ?></span>
+                    <span class="ezit-theme-text"><?php echo $current_theme === 'dark' ? 'Light Mode' : 'Dark Mode'; ?></span>
                 </button>
             </div>
             
             <!-- Tab Navigation -->
-            <nav class="ezdh-tabs">
-                <a href="?page=ez-dh-sso&tab=dashboard" class="ezdh-tab <?php echo $current_tab === 'dashboard' ? 'ezdh-tab-active' : ''; ?>">
+            <nav class="ezit-tabs">
+                <a href="?page=ez-dh-sso&tab=dashboard" class="ezit-tab <?php echo $current_tab === 'dashboard' ? 'ezit-tab-active' : ''; ?>">
                     <span class="dashicons dashicons-dashboard"></span> Dashboard
                 </a>
-                <a href="?page=ez-dh-sso&tab=sso" class="ezdh-tab <?php echo $current_tab === 'sso' ? 'ezdh-tab-active' : ''; ?>">
+                <a href="?page=ez-dh-sso&tab=sso" class="ezit-tab <?php echo $current_tab === 'sso' ? 'ezit-tab-active' : ''; ?>">
                     <span class="dashicons dashicons-admin-network"></span> SSO & Tokens
                 </a>
-                <a href="?page=ez-dh-sso&tab=impersonation" class="ezdh-tab <?php echo $current_tab === 'impersonation' ? 'ezdh-tab-active' : ''; ?>">
+                <a href="?page=ez-dh-sso&tab=impersonation" class="ezit-tab <?php echo $current_tab === 'impersonation' ? 'ezit-tab-active' : ''; ?>">
                     <span class="dashicons dashicons-admin-users"></span> Impersonation
                 </a>
-                <a href="?page=ez-dh-sso&tab=migration" class="ezdh-tab <?php echo $current_tab === 'migration' ? 'ezdh-tab-active' : ''; ?>">
+                <a href="?page=ez-dh-sso&tab=migration" class="ezit-tab <?php echo $current_tab === 'migration' ? 'ezit-tab-active' : ''; ?>">
                     <span class="dashicons dashicons-database-export"></span> Migration Tools
                 </a>
-                <a href="?page=ez-dh-sso&tab=settings" class="ezdh-tab <?php echo $current_tab === 'settings' ? 'ezdh-tab-active' : ''; ?>">
+                <a href="?page=ez-dh-sso&tab=settings" class="ezit-tab <?php echo $current_tab === 'settings' ? 'ezit-tab-active' : ''; ?>">
                     <span class="dashicons dashicons-admin-settings"></span> Settings
                 </a>
             </nav>
             
-            <div class="ezdh-content-wrapper">
-                <div class="ezdh-main-content"><?php
+            <div class="ezit-content-wrapper">
+                <div class="ezit-main-content"><?php
                 
                 // Render tab content based on current tab
                 switch($current_tab) {
@@ -82,12 +82,12 @@ class Admin_Page {
                 ?></div>
                 
                 <!-- Sidebar -->
-                <aside class="ezdh-sidebar">
+                <aside class="ezit-sidebar">
                     <?php self::render_sidebar($current_tab); ?>
                 </aside>
             </div>
             
-            <footer class="ezdh-footer">
+            <footer class="ezit-footer">
                 <p>Built by <a href="https://www.Ez-IT-Solutions.com" target="_blank">Ez IT Solutions</a> | Chris Hultberg | Powered by DreamHost</p>
             </footer>
         </div>
@@ -101,7 +101,7 @@ class Admin_Page {
                 <div class="notice notice-success p-4 mb-4 rounded border border-lime-500 bg-gray-800">
                     <p class="font-semibold">Generated Login URL(s):</p>
                     <?php foreach ($last_urls as $url): ?>
-                        <p><input class="w-full ezdh-copy" type="text" readonly value="<?php echo esc_attr($url); ?>"></p>
+                        <p><input class="w-full ezit-copy" type="text" readonly value="<?php echo esc_attr($url); ?>"></p>
                     <?php endforeach; ?>
                 </div>
             <?php elseif ($notice === 'installed'): ?>

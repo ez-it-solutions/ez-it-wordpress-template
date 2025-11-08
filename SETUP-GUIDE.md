@@ -86,7 +86,7 @@ define('YOUR_PLUGIN_URL', plugin_dir_url(__FILE__));
 In `admin/class-admin-page-tabbed.php`, update the header title:
 
 ```php
-<h1 class="ezdh-title">
+<h1 class="ezit-title">
     <span class="dashicons dashicons-your-icon"></span>
     Your Company – Your Plugin Name
 </h1>
@@ -100,7 +100,7 @@ In `admin/class-admin-page-tabbed.php`, remove tabs you don't need from the navi
 #### Add New Tabs
 1. Add tab link in navigation:
 ```php
-<a href="?page=your-plugin&tab=features" class="ezdh-tab" data-tab="features">
+<a href="?page=your-plugin&tab=features" class="ezit-tab" data-tab="features">
     <span class="dashicons dashicons-star-filled"></span>
     Features
 </a>
@@ -110,8 +110,8 @@ In `admin/class-admin-page-tabbed.php`, remove tabs you don't need from the navi
 ```php
 public static function render_features_tab() {
     ?>
-    <h2 class="ezdh-section-title">Features</h2>
-    <div class="ezdh-card">
+    <h2 class="ezit-section-title">Features</h2>
+    <div class="ezit-card">
         <h3><span class="dashicons dashicons-star-filled"></span> Your Features</h3>
         <p>Feature content here...</p>
     </div>
@@ -224,34 +224,34 @@ Now add your plugin's core functionality:
 ### Example 1: Adding a Stats Card
 
 ```php
-<div class="ezdh-stat">
-    <span class="ezdh-stat-value">42</span>
-    <span class="ezdh-stat-label">Total Items</span>
+<div class="ezit-stat">
+    <span class="ezit-stat-value">42</span>
+    <span class="ezit-stat-label">Total Items</span>
 </div>
 ```
 
 ### Example 2: Adding a Toggle Setting
 
 ```php
-<div class="ezdh-setting-item">
-    <div class="ezdh-setting-header">
-        <label class="ezdh-setting-label">
+<div class="ezit-setting-item">
+    <div class="ezit-setting-header">
+        <label class="ezit-setting-label">
             <span class="dashicons dashicons-admin-generic"></span>
             Enable Feature
         </label>
-        <label class="ezdh-toggle">
+        <label class="ezit-toggle">
             <input type="checkbox" name="feature_enabled" value="1" <?php checked($feature_enabled); ?>>
-            <span class="ezdh-toggle-slider"></span>
+            <span class="ezit-toggle-slider"></span>
         </label>
     </div>
-    <p class="ezdh-setting-description">Enable this awesome feature.</p>
+    <p class="ezit-setting-description">Enable this awesome feature.</p>
 </div>
 ```
 
 ### Example 3: Adding a Sidebar Card
 
 ```php
-<div class="ezdh-sidebar-card">
+<div class="ezit-sidebar-card">
     <h3><span class="dashicons dashicons-info"></span> Quick Tip</h3>
     <p>Your helpful tip here...</p>
 </div>

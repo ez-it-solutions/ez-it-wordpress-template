@@ -102,7 +102,7 @@ See [BRANDING.md](BRANDING.md) for complete design documentation.
 
 1. **Add tab to navigation** in `class-admin-page-tabbed.php`:
 ```php
-<a href="?page=your-plugin&tab=newtab" class="ezdh-tab" data-tab="newtab">
+<a href="?page=your-plugin&tab=newtab" class="ezit-tab" data-tab="newtab">
     <span class="dashicons dashicons-admin-generic"></span>
     New Tab
 </a>
@@ -112,8 +112,8 @@ See [BRANDING.md](BRANDING.md) for complete design documentation.
 ```php
 public static function render_newtab_tab() {
     ?>
-    <h2 class="ezdh-section-title">New Tab</h2>
-    <div class="ezdh-card">
+    <h2 class="ezit-section-title">New Tab</h2>
+    <div class="ezit-card">
         <h3>Content Here</h3>
         <p>Your tab content...</p>
     </div>
@@ -135,15 +135,15 @@ Edit `assets/css/admin-tabbed.css`:
 **Dark Mode Primary Color:**
 ```css
 /* Change #a3e635 to your color */
-.ezdh-stat-value { color: #a3e635; }
-.ezdh-card h3 { color: #a3e635; }
+.ezit-stat-value { color: #a3e635; }
+.ezit-card h3 { color: #a3e635; }
 ```
 
 **Light Mode Primary Color:**
 ```css
 /* Change #16a34a to your color */
-.ezdh-light .ezdh-stat-value { color: #16a34a; }
-.ezdh-light .ezdh-card h3 { color: #16a34a; }
+.ezit-light .ezit-stat-value { color: #16a34a; }
+.ezit-light .ezit-card h3 { color: #16a34a; }
 ```
 
 ### Adding Settings

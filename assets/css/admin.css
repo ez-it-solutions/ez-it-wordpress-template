@@ -1,7 +1,7 @@
 /* Ez IT Solutions - DreamHost SSO Fix - Modern Admin Styles */
 
 /* Base Layout */
-.ezdh-wrap { 
+.ezit-wrap { 
     padding: 20px; 
     border-radius: 10px;
     max-width: 1400px;
@@ -10,7 +10,7 @@
 }
 
 /* Header Layout */
-.ezdh-header {
+.ezit-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,13 +19,13 @@
     gap: 15px;
 }
 
-.ezdh-title {
+.ezit-title {
     margin: 0 !important;
     font-size: 1.5rem;
     font-weight: 700;
 }
 
-.ezdh-theme-btn {
+.ezit-theme-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -36,22 +36,22 @@
     transition: opacity 0.2s ease;
 }
 
-.ezdh-theme-btn:disabled {
+.ezit-theme-btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
 }
 
-.ezdh-theme-icon {
+.ezit-theme-icon {
     font-size: 1.2em;
     transition: transform 0.3s ease;
 }
 
-.ezdh-theme-text {
+.ezit-theme-text {
     font-size: 0.95em;
 }
 
 /* Loading Spinner */
-.ezdh-spinner {
+.ezit-spinner {
     display: inline-block;
     width: 16px;
     height: 16px;
@@ -61,12 +61,12 @@
     animation: spin 0.6s linear infinite;
 }
 
-.ezdh-dark .ezdh-spinner {
+.ezit-dark .ezit-spinner {
     border-color: rgba(163, 230, 53, 0.3);
     border-top-color: #a3e635;
 }
 
-.ezdh-light .ezdh-spinner {
+.ezit-light .ezit-spinner {
     border-color: rgba(22, 163, 74, 0.3);
     border-top-color: #16a34a;
 }
@@ -79,25 +79,25 @@
    DARK MODE (Default)
    ============================================ */
 
-.ezdh-dark {
+.ezit-dark {
     background-color: #0b0f12;
     color: #ffffff;
 }
 
 /* Dark Mode Title */
-.ezdh-dark .ezdh-title {
+.ezit-dark .ezit-title {
     color: #a3e635;
 }
 
 /* Dark Mode Color Palette */
-.ezdh-dark .bg-gray-900 { background-color: #0b0f12; }
-.ezdh-dark .bg-gray-800 { background-color: #131a1f; }
-.ezdh-dark .bg-gray-700 { background-color: #374151; color:#fff; }
-.ezdh-dark .bg-lime-900 { background-color: #1a2e05; }
-.ezdh-dark .text-white { color: #fff; }
-.ezdh-dark .text-gray-300 { color: #d1d5db; }
-.ezdh-dark .text-gray-400 { color: #9ca3af; }
-.ezdh-dark .text-lime-400 { color: #a3e635; }
+.ezit-dark .bg-gray-900 { background-color: #0b0f12; }
+.ezit-dark .bg-gray-800 { background-color: #131a1f; }
+.ezit-dark .bg-gray-700 { background-color: #374151; color:#fff; }
+.ezit-dark .bg-lime-900 { background-color: #1a2e05; }
+.ezit-dark .text-white { color: #fff; }
+.ezit-dark .text-gray-300 { color: #d1d5db; }
+.ezit-dark .text-gray-400 { color: #9ca3af; }
+.ezit-dark .text-lime-400 { color: #a3e635; }
 .text-xs { font-size: 0.75rem; }
 .text-sm { font-size: 0.875rem; }
 .text-lg { font-size: 1.125rem; }
@@ -105,17 +105,17 @@
 .text-2xl { font-size: 1.5rem; }
 
 /* Dark Mode Borders & Backgrounds */
-.ezdh-dark .border { border-width: 1px; }
-.ezdh-dark .border-lime-500 { border-color: #84cc16; }
-.ezdh-dark .border-red-500 { border-color: #ef4444; }
-.ezdh-dark .bg-lime-500 { background-color: #84cc16 !important; color:#0b0f12 !important; }
-.ezdh-dark .hover\:bg-lime-400:hover { background-color: #a3e635 !important; }
-.ezdh-dark .hover\:bg-gray-600:hover { background-color: #4b5563; }
+.ezit-dark .border { border-width: 1px; }
+.ezit-dark .border-lime-500 { border-color: #84cc16; }
+.ezit-dark .border-red-500 { border-color: #ef4444; }
+.ezit-dark .bg-lime-500 { background-color: #84cc16 !important; color:#0b0f12 !important; }
+.ezit-dark .hover\:bg-lime-400:hover { background-color: #a3e635 !important; }
+.ezit-dark .hover\:bg-gray-600:hover { background-color: #4b5563; }
 
 /* Dark Mode Gradient Backgrounds */
-.ezdh-dark .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
-.ezdh-dark .from-lime-900 { --tw-gradient-from: #1a2e05; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(26, 46, 5, 0)); }
-.ezdh-dark .to-gray-800 { --tw-gradient-to: #131a1f; }
+.ezit-dark .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+.ezit-dark .from-lime-900 { --tw-gradient-from: #1a2e05; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(26, 46, 5, 0)); }
+.ezit-dark .to-gray-800 { --tw-gradient-to: #131a1f; }
 
 /* Spacing */
 .p-3 { padding: 12px; }
@@ -166,11 +166,11 @@
 }
 
 /* Dark Mode Input Fields */
-.ezdh-dark input[type="text"],
-.ezdh-dark input[type="password"],
-.ezdh-dark input[type="url"],
-.ezdh-dark input[type="number"],
-.ezdh-dark select {
+.ezit-dark input[type="text"],
+.ezit-dark input[type="password"],
+.ezit-dark input[type="url"],
+.ezit-dark input[type="number"],
+.ezit-dark select {
     background-color: #1f2937 !important;
     color: #fff !important;
     border: 1px solid #374151 !important;
@@ -178,18 +178,18 @@
     padding: 8px 12px !important;
     transition: border-color 0.2s ease;
 }
-.ezdh-dark input[type="text"]:focus,
-.ezdh-dark input[type="password"]:focus,
-.ezdh-dark input[type="url"]:focus,
-.ezdh-dark input[type="number"]:focus,
-.ezdh-dark select:focus {
+.ezit-dark input[type="text"]:focus,
+.ezit-dark input[type="password"]:focus,
+.ezit-dark input[type="url"]:focus,
+.ezit-dark input[type="number"]:focus,
+.ezit-dark select:focus {
     border-color: #84cc16 !important;
     outline: none !important;
     box-shadow: 0 0 0 2px rgba(132, 204, 22, 0.1) !important;
 }
 
 /* Dark Mode Copy Input */
-.ezdh-dark .ezdh-copy { 
+.ezit-dark .ezit-copy { 
     font-family: 'Courier New', monospace; 
     background: #1f2937;
     color: #a3e635;
@@ -197,33 +197,33 @@
     border: 1px solid #374151;
     border-radius: 4px;
 }
-.ezdh-dark .ezdh-copy:focus {
+.ezit-dark .ezit-copy:focus {
     outline: 2px solid #84cc16;
     background: #111827;
 }
 
 /* Dark Mode Buttons */
-.ezdh-dark .button.button-primary.bg-lime-500 {
+.ezit-dark .button.button-primary.bg-lime-500 {
     font-weight: 600;
     transition: all 0.2s ease;
 }
-.ezdh-dark .button.button-primary.bg-lime-500:hover {
+.ezit-dark .button.button-primary.bg-lime-500:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(132, 204, 22, 0.3);
 }
-.ezdh-dark .button.bg-gray-700 {
+.ezit-dark .button.bg-gray-700 {
     transition: all 0.2s ease;
 }
-.ezdh-dark .button.bg-gray-700:hover {
+.ezit-dark .button.bg-gray-700:hover {
     transform: translateY(-1px);
 }
 
 /* Dark Mode Notices */
-.ezdh-dark .notice { 
+.ezit-dark .notice { 
     border-left: 4px solid #84cc16;
     animation: slideIn 0.3s ease-out;
 }
-.ezdh-dark .notice-error {
+.ezit-dark .notice-error {
     border-left-color: #ef4444;
 }
 
@@ -231,101 +231,101 @@
    LIGHT MODE
    ============================================ */
 
-.ezdh-light {
+.ezit-light {
     background-color: #f9fafb;
     color: #1f2937;
 }
 
 /* Light Mode Title */
-.ezdh-light .ezdh-title {
+.ezit-light .ezit-title {
     color: #16a34a;
 }
 
 /* Light Mode Colors */
-.ezdh-light .bg-gray-900 { background-color: #ffffff; border: 1px solid #e5e7eb; }
-.ezdh-light .bg-gray-800 { background-color: #f3f4f6; border: 1px solid #d1d5db; }
-.ezdh-light .bg-gray-700 { background-color: #e5e7eb; color: #1f2937; }
-.ezdh-light .bg-lime-900 { background-color: #f0fdf4; border: 1px solid #86efac; }
-.ezdh-light .text-white { color: #1f2937; }
-.ezdh-light .text-gray-300 { color: #4b5563; }
-.ezdh-light .text-gray-400 { color: #6b7280; }
-.ezdh-light .text-lime-400 { color: #16a34a; }
+.ezit-light .bg-gray-900 { background-color: #ffffff; border: 1px solid #e5e7eb; }
+.ezit-light .bg-gray-800 { background-color: #f3f4f6; border: 1px solid #d1d5db; }
+.ezit-light .bg-gray-700 { background-color: #e5e7eb; color: #1f2937; }
+.ezit-light .bg-lime-900 { background-color: #f0fdf4; border: 1px solid #86efac; }
+.ezit-light .text-white { color: #1f2937; }
+.ezit-light .text-gray-300 { color: #4b5563; }
+.ezit-light .text-gray-400 { color: #6b7280; }
+.ezit-light .text-lime-400 { color: #16a34a; }
 
 /* Light Mode Borders */
-.ezdh-light .border-lime-500 { border-color: #22c55e; }
-.ezdh-light .border-red-500 { border-color: #ef4444; }
+.ezit-light .border-lime-500 { border-color: #22c55e; }
+.ezit-light .border-red-500 { border-color: #ef4444; }
 
 /* Light Mode Backgrounds */
-.ezdh-light .bg-lime-500 { background-color: #22c55e !important; color: #ffffff !important; }
-.ezdh-light .hover\:bg-lime-400:hover { background-color: #4ade80 !important; }
-.ezdh-light .hover\:bg-gray-600:hover { background-color: #d1d5db; }
+.ezit-light .bg-lime-500 { background-color: #22c55e !important; color: #ffffff !important; }
+.ezit-light .hover\:bg-lime-400:hover { background-color: #4ade80 !important; }
+.ezit-light .hover\:bg-gray-600:hover { background-color: #d1d5db; }
 
 /* Light Mode Gradient */
-.ezdh-light .bg-gradient-to-r { background-image: linear-gradient(to right, #f0fdf4, #f3f4f6); }
-.ezdh-light .from-lime-900 { --tw-gradient-from: #f0fdf4; }
-.ezdh-light .to-gray-800 { --tw-gradient-to: #f3f4f6; }
+.ezit-light .bg-gradient-to-r { background-image: linear-gradient(to right, #f0fdf4, #f3f4f6); }
+.ezit-light .from-lime-900 { --tw-gradient-from: #f0fdf4; }
+.ezit-light .to-gray-800 { --tw-gradient-to: #f3f4f6; }
 
 /* Light Mode Form Elements */
-.ezdh-light input[type="text"],
-.ezdh-light input[type="password"],
-.ezdh-light input[type="url"],
-.ezdh-light input[type="number"],
-.ezdh-light select {
+.ezit-light input[type="text"],
+.ezit-light input[type="password"],
+.ezit-light input[type="url"],
+.ezit-light input[type="number"],
+.ezit-light select {
     background-color: #ffffff !important;
     color: #1f2937 !important;
     border: 1px solid #d1d5db !important;
 }
 
-.ezdh-light input[type="text"]:focus,
-.ezdh-light input[type="password"]:focus,
-.ezdh-light input[type="url"]:focus,
-.ezdh-light input[type="number"]:focus,
-.ezdh-light select:focus {
+.ezit-light input[type="text"]:focus,
+.ezit-light input[type="password"]:focus,
+.ezit-light input[type="url"]:focus,
+.ezit-light input[type="number"]:focus,
+.ezit-light select:focus {
     border-color: #22c55e !important;
     box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.1) !important;
 }
 
 /* Light Mode Copy Input */
-.ezdh-light .ezdh-copy { 
+.ezit-light .ezit-copy { 
     background: #f9fafb;
     color: #16a34a;
     border: 1px solid #d1d5db;
 }
-.ezdh-light .ezdh-copy:focus {
+.ezit-light .ezit-copy:focus {
     background: #ffffff;
     border-color: #22c55e;
 }
 
 /* Light Mode Buttons */
-.ezdh-light .button.button-primary.bg-lime-500 {
+.ezit-light .button.button-primary.bg-lime-500 {
     background-color: #22c55e !important;
     border-color: #22c55e !important;
     color: #ffffff !important;
 }
-.ezdh-light .button.button-primary.bg-lime-500:hover {
+.ezit-light .button.button-primary.bg-lime-500:hover {
     background-color: #16a34a !important;
     box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
 }
-.ezdh-light .button.bg-gray-700 {
+.ezit-light .button.bg-gray-700 {
     background-color: #e5e7eb;
     color: #1f2937;
     border-color: #d1d5db;
 }
-.ezdh-light .button.bg-gray-700:hover {
+.ezit-light .button.bg-gray-700:hover {
     background-color: #d1d5db;
 }
 
 /* Light Mode Notices */
-.ezdh-light .notice { 
+.ezit-light .notice { 
     border-left-color: #22c55e;
     background-color: #f0fdf4 !important;
 }
-.ezdh-light .notice-error {
+.ezit-light .notice-error {
     border-left-color: #ef4444;
     background-color: #fef2f2 !important;
 }
 
 /* Light Mode Shadow */
-.ezdh-light .shadow { 
+.ezit-light .shadow { 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.03); 
 }

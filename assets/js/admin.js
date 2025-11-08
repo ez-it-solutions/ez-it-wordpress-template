@@ -1,15 +1,15 @@
 (function($){
   // Auto-select text on focus
-  $(document).on('focus', '.ezdh-copy', function(){ this.select(); });
+  $(document).on('focus', '.ezit-copy', function(){ this.select(); });
   
   // AJAX Theme Toggle
-  $('#ezdh-theme-toggle').on('click', function(e) {
+  $('#ezit-theme-toggle').on('click', function(e) {
     e.preventDefault();
     
     const $button = $(this);
-    const $wrap = $('#ezdh-main-wrap');
-    const $icon = $button.find('.ezdh-theme-icon');
-    const $text = $button.find('.ezdh-theme-text');
+    const $wrap = $('#ezit-main-wrap');
+    const $icon = $button.find('.ezit-theme-icon');
+    const $text = $button.find('.ezit-theme-text');
     const currentTheme = $wrap.data('theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
@@ -19,7 +19,7 @@
     
     // Disable button and show loading state
     $button.prop('disabled', true);
-    $icon.html('<span class="ezdh-spinner"></span>');
+    $icon.html('<span class="ezit-spinner"></span>');
     $text.text('Switching...');
     
     // Send AJAX request to save theme preference
@@ -27,14 +27,14 @@
       url: ajaxurl,
       type: 'POST',
       data: {
-        action: 'ez_dh_toggle_theme_ajax',
+        action: 'ez_dh_togglezitTemplateAjax',
         nonce: ezDhAjax.nonce,
         theme: newTheme
       },
       success: function(response) {
         if (response.success) {
           // Update theme class with smooth transition
-          $wrap.removeClass('ezdh-dark ezdh-light').addClass('ezdh-' + newTheme);
+          $wrap.removeClass('ezit-dark ezit-light').addClass('ezit-' + newTheme);
           $wrap.data('theme', newTheme);
           
           // Update button text and icon
@@ -69,7 +69,7 @@
   });
   
   // AJAX Tab Switching
-  $('.ezdh-tab').on('click', function(e) {
+  $('.ezit-tab').on('click', function(e) {
     e.preventDefault();
     
     const $tab = $(this);
@@ -78,21 +78,21 @@
     const tabName = urlParams.get('tab') || 'dashboard';
     
     // Don't reload if already active
-    if ($tab.hasClass('ezdh-tab-active')) {
+    if ($tab.hasClass('ezit-tab-active')) {
       return;
     }
     
     // Update active tab styling
-    $('.ezdh-tab').removeClass('ezdh-tab-active');
-    $tab.addClass('ezdh-tab-active');
+    $('.ezit-tab').removeClass('ezit-tab-active');
+    $tab.addClass('ezit-tab-active');
     
     // Show loading modal with correct theme class
-    const $modal = $('#ezdh-loading-modal');
-    const $wrap = $('#ezdh-main-wrap');
+    const $modal = $('#ezit-loading-modal');
+    const $wrap = $('#ezit-main-wrap');
     const currentTheme = $wrap.data('theme');
     
     // Apply theme class to modal
-    $modal.removeClass('ezdh-dark ezdh-light').addClass('ezdh-' + currentTheme);
+    $modal.removeClass('ezit-dark ezit-light').addClass('ezit-' + currentTheme);
     $modal.addClass('active');
     
     // Load tab content via AJAX
@@ -107,17 +107,17 @@
       success: function(response) {
         if (response.success) {
           // Update content
-          $('.ezdh-main-content').html(response.data.content);
-          $('.ezdh-sidebar').html(response.data.sidebar);
+          $('.ezit-main-content').html(response.data.content);
+          $('.ezit-sidebar').html(response.data.sidebar);
           
           // Update URL without reload
           window.history.pushState({tab: tabName}, '', tabUrl);
           
           // Hide loading modal
-          $('#ezdh-loading-modal').removeClass('active');
+          $('#ezit-loading-modal').removeClass('active');
           
           // Scroll to top
-          $('.ezdh-fullpage').scrollTop(0);
+          $('.ezit-fullpage').scrollTop(0);
         } else {
           // Fallback to page reload on error
           window.location.href = tabUrl;
@@ -133,26 +133,26 @@
   // Handle browser back/forward buttons
   window.addEventListener('popstate', function(e) {
     if (e.state && e.state.tab) {
-      $('.ezdh-tab[href*="tab=' + e.state.tab + '"]').trigger('click');
+      $('.ezit-tab[href*="tab=' + e.state.tab + '"]').trigger('click');
     }
   });
   
   // Theme selector in settings
-  $(document).on('click', '.ezdh-theme-option', function() {
+  $(document).on('click', '.ezit-theme-option', function() {
     const theme = $(this).data('theme');
-    const currentTheme = $('#ezdh-main-wrap').data('theme');
+    const currentTheme = $('#ezit-main-wrap').data('theme');
     
     if (theme === currentTheme) {
       return;
     }
     
     // Update active states immediately
-    $('.ezdh-theme-option').removeClass('active');
-    $('.ezdh-theme-active-badge').remove();
+    $('.ezit-theme-option').removeClass('active');
+    $('.ezit-theme-active-badge').remove();
     $(this).addClass('active');
-    $(this).append('<span class="ezdh-theme-active-badge">Active</span>');
+    $(this).append('<span class="ezit-theme-active-badge">Active</span>');
     
     // Trigger the theme toggle
-    $('#ezdh-theme-toggle').trigger('click');
+    $('#ezit-theme-toggle').trigger('click');
   });
 })(jQuery);
