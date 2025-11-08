@@ -1,0 +1,331 @@
+/* Ez IT Solutions - DreamHost SSO Fix - Modern Admin Styles */
+
+/* Base Layout */
+.ezdh-wrap { 
+    padding: 20px; 
+    border-radius: 10px;
+    max-width: 1400px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header Layout */
+.ezdh-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.ezdh-title {
+    margin: 0 !important;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.ezdh-theme-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px !important;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+}
+
+.ezdh-theme-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.ezdh-theme-icon {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.ezdh-theme-text {
+    font-size: 0.95em;
+}
+
+/* Loading Spinner */
+.ezdh-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.6s linear infinite;
+}
+
+.ezdh-dark .ezdh-spinner {
+    border-color: rgba(163, 230, 53, 0.3);
+    border-top-color: #a3e635;
+}
+
+.ezdh-light .ezdh-spinner {
+    border-color: rgba(22, 163, 74, 0.3);
+    border-top-color: #16a34a;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   DARK MODE (Default)
+   ============================================ */
+
+.ezdh-dark {
+    background-color: #0b0f12;
+    color: #ffffff;
+}
+
+/* Dark Mode Title */
+.ezdh-dark .ezdh-title {
+    color: #a3e635;
+}
+
+/* Dark Mode Color Palette */
+.ezdh-dark .bg-gray-900 { background-color: #0b0f12; }
+.ezdh-dark .bg-gray-800 { background-color: #131a1f; }
+.ezdh-dark .bg-gray-700 { background-color: #374151; color:#fff; }
+.ezdh-dark .bg-lime-900 { background-color: #1a2e05; }
+.ezdh-dark .text-white { color: #fff; }
+.ezdh-dark .text-gray-300 { color: #d1d5db; }
+.ezdh-dark .text-gray-400 { color: #9ca3af; }
+.ezdh-dark .text-lime-400 { color: #a3e635; }
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+
+/* Dark Mode Borders & Backgrounds */
+.ezdh-dark .border { border-width: 1px; }
+.ezdh-dark .border-lime-500 { border-color: #84cc16; }
+.ezdh-dark .border-red-500 { border-color: #ef4444; }
+.ezdh-dark .bg-lime-500 { background-color: #84cc16 !important; color:#0b0f12 !important; }
+.ezdh-dark .hover\:bg-lime-400:hover { background-color: #a3e635 !important; }
+.ezdh-dark .hover\:bg-gray-600:hover { background-color: #4b5563; }
+
+/* Dark Mode Gradient Backgrounds */
+.ezdh-dark .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+.ezdh-dark .from-lime-900 { --tw-gradient-from: #1a2e05; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(26, 46, 5, 0)); }
+.ezdh-dark .to-gray-800 { --tw-gradient-to: #131a1f; }
+
+/* Spacing */
+.p-3 { padding: 12px; }
+.p-4 { padding: 16px; }
+.p-6 { padding: 24px; }
+.mb-1 { margin-bottom: 4px; }
+.mb-2 { margin-bottom: 8px; }
+.mb-3 { margin-bottom: 12px; }
+.mb-4 { margin-bottom: 16px; }
+.mt-2 { margin-top: 8px; }
+.mt-6 { margin-top: 24px; }
+
+/* Typography */
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+.block { display: block; }
+
+/* Layout */
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: 1fr; }
+.gap-6 { grid-gap: 24px; }
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { grid-template-columns: 1fr 1fr; }
+}
+
+/* Effects */
+.rounded { border-radius: 8px; }
+.shadow { box-shadow: 0 10px 20px rgba(0,0,0,.2); }
+
+/* Lists */
+.list-disc { list-style: disc; }
+.list-inside { list-style-position: inside; }
+
+/* Form Elements */
+.min-w-\[240px\] { min-width: 240px; }
+.min-w-\[320px\] { min-width: 320px; }
+.w-full { width: 100%; }
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dark Mode Input Fields */
+.ezdh-dark input[type="text"],
+.ezdh-dark input[type="password"],
+.ezdh-dark input[type="url"],
+.ezdh-dark input[type="number"],
+.ezdh-dark select {
+    background-color: #1f2937 !important;
+    color: #fff !important;
+    border: 1px solid #374151 !important;
+    border-radius: 4px !important;
+    padding: 8px 12px !important;
+    transition: border-color 0.2s ease;
+}
+.ezdh-dark input[type="text"]:focus,
+.ezdh-dark input[type="password"]:focus,
+.ezdh-dark input[type="url"]:focus,
+.ezdh-dark input[type="number"]:focus,
+.ezdh-dark select:focus {
+    border-color: #84cc16 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(132, 204, 22, 0.1) !important;
+}
+
+/* Dark Mode Copy Input */
+.ezdh-dark .ezdh-copy { 
+    font-family: 'Courier New', monospace; 
+    background: #1f2937;
+    color: #a3e635;
+    padding: 8px;
+    border: 1px solid #374151;
+    border-radius: 4px;
+}
+.ezdh-dark .ezdh-copy:focus {
+    outline: 2px solid #84cc16;
+    background: #111827;
+}
+
+/* Dark Mode Buttons */
+.ezdh-dark .button.button-primary.bg-lime-500 {
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+.ezdh-dark .button.button-primary.bg-lime-500:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(132, 204, 22, 0.3);
+}
+.ezdh-dark .button.bg-gray-700 {
+    transition: all 0.2s ease;
+}
+.ezdh-dark .button.bg-gray-700:hover {
+    transform: translateY(-1px);
+}
+
+/* Dark Mode Notices */
+.ezdh-dark .notice { 
+    border-left: 4px solid #84cc16;
+    animation: slideIn 0.3s ease-out;
+}
+.ezdh-dark .notice-error {
+    border-left-color: #ef4444;
+}
+
+/* ============================================
+   LIGHT MODE
+   ============================================ */
+
+.ezdh-light {
+    background-color: #f9fafb;
+    color: #1f2937;
+}
+
+/* Light Mode Title */
+.ezdh-light .ezdh-title {
+    color: #16a34a;
+}
+
+/* Light Mode Colors */
+.ezdh-light .bg-gray-900 { background-color: #ffffff; border: 1px solid #e5e7eb; }
+.ezdh-light .bg-gray-800 { background-color: #f3f4f6; border: 1px solid #d1d5db; }
+.ezdh-light .bg-gray-700 { background-color: #e5e7eb; color: #1f2937; }
+.ezdh-light .bg-lime-900 { background-color: #f0fdf4; border: 1px solid #86efac; }
+.ezdh-light .text-white { color: #1f2937; }
+.ezdh-light .text-gray-300 { color: #4b5563; }
+.ezdh-light .text-gray-400 { color: #6b7280; }
+.ezdh-light .text-lime-400 { color: #16a34a; }
+
+/* Light Mode Borders */
+.ezdh-light .border-lime-500 { border-color: #22c55e; }
+.ezdh-light .border-red-500 { border-color: #ef4444; }
+
+/* Light Mode Backgrounds */
+.ezdh-light .bg-lime-500 { background-color: #22c55e !important; color: #ffffff !important; }
+.ezdh-light .hover\:bg-lime-400:hover { background-color: #4ade80 !important; }
+.ezdh-light .hover\:bg-gray-600:hover { background-color: #d1d5db; }
+
+/* Light Mode Gradient */
+.ezdh-light .bg-gradient-to-r { background-image: linear-gradient(to right, #f0fdf4, #f3f4f6); }
+.ezdh-light .from-lime-900 { --tw-gradient-from: #f0fdf4; }
+.ezdh-light .to-gray-800 { --tw-gradient-to: #f3f4f6; }
+
+/* Light Mode Form Elements */
+.ezdh-light input[type="text"],
+.ezdh-light input[type="password"],
+.ezdh-light input[type="url"],
+.ezdh-light input[type="number"],
+.ezdh-light select {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+    border: 1px solid #d1d5db !important;
+}
+
+.ezdh-light input[type="text"]:focus,
+.ezdh-light input[type="password"]:focus,
+.ezdh-light input[type="url"]:focus,
+.ezdh-light input[type="number"]:focus,
+.ezdh-light select:focus {
+    border-color: #22c55e !important;
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.1) !important;
+}
+
+/* Light Mode Copy Input */
+.ezdh-light .ezdh-copy { 
+    background: #f9fafb;
+    color: #16a34a;
+    border: 1px solid #d1d5db;
+}
+.ezdh-light .ezdh-copy:focus {
+    background: #ffffff;
+    border-color: #22c55e;
+}
+
+/* Light Mode Buttons */
+.ezdh-light .button.button-primary.bg-lime-500 {
+    background-color: #22c55e !important;
+    border-color: #22c55e !important;
+    color: #ffffff !important;
+}
+.ezdh-light .button.button-primary.bg-lime-500:hover {
+    background-color: #16a34a !important;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+.ezdh-light .button.bg-gray-700 {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    border-color: #d1d5db;
+}
+.ezdh-light .button.bg-gray-700:hover {
+    background-color: #d1d5db;
+}
+
+/* Light Mode Notices */
+.ezdh-light .notice { 
+    border-left-color: #22c55e;
+    background-color: #f0fdf4 !important;
+}
+.ezdh-light .notice-error {
+    border-left-color: #ef4444;
+    background-color: #fef2f2 !important;
+}
+
+/* Light Mode Shadow */
+.ezdh-light .shadow { 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.03); 
+}

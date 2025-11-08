@@ -1,0 +1,1349 @@
+/* Ez IT Solutions - DreamHost SSO Fix - Tabbed Interface Styles */
+
+/* ============================================
+   FULL PAGE LAYOUT
+   ============================================ */
+
+.ezdh-fullpage {
+    position: fixed;
+    top: 32px; /* WordPress admin bar height */
+    left: 160px; /* WordPress sidebar width */
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Adjust for collapsed admin menu */
+@media screen and (max-width: 960px) {
+    .ezdh-fullpage {
+        left: 36px;
+    }
+}
+
+/* Adjust for mobile */
+@media screen and (max-width: 782px) {
+    .ezdh-fullpage {
+        top: 46px;
+        left: 0;
+    }
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.ezdh-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ezdh-title {
+    margin: 0 !important;
+    font-size: 1.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ezdh-title .dashicons {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.ezdh-theme-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px !important;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    background: rgba(163, 230, 53, 0.1) !important;
+    color: #a3e635 !important;
+    border: 1px solid rgba(163, 230, 53, 0.3) !important;
+}
+
+.ezdh-theme-btn:hover {
+    background: rgba(163, 230, 53, 0.15) !important;
+    border-color: rgba(163, 230, 53, 0.5) !important;
+}
+
+.ezdh-theme-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.ezdh-theme-icon {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.ezdh-theme-text {
+    font-size: 0.95em;
+}
+
+/* Loading Spinner */
+.ezdh-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   LOADING MODAL
+   ============================================ */
+
+.ezdh-loading-modal {
+    position: fixed;
+    top: 180px;
+    left: 160px;
+    right: 320px;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    backdrop-filter: blur(2px);
+    margin-right: 50px;
+}
+
+@media screen and (max-width: 1200px) {
+    .ezdh-loading-modal {
+        right: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .ezdh-loading-modal {
+        left: 36px;
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .ezdh-loading-modal {
+        top: 200px;
+        left: 0;
+    }
+}
+
+.ezdh-loading-modal.active {
+    display: flex;
+}
+
+.ezdh-loading-content {
+    background: #131a1f;
+    padding: 40px 60px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(163, 230, 53, 0.3);
+}
+
+.ezdh-loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(163, 230, 53, 0.2);
+    border-top-color: #a3e635;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 20px;
+}
+
+.ezdh-loading-text {
+    color: #a3e635;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Light mode loading modal */
+.ezdh-loading-modal.ezdh-light .ezdh-loading-content {
+    background: #ffffff;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.ezdh-loading-modal.ezdh-light .ezdh-loading-spinner {
+    border-color: rgba(34, 197, 94, 0.2);
+    border-top-color: #22c55e;
+}
+
+.ezdh-loading-modal.ezdh-light .ezdh-loading-text {
+    color: #16a34a;
+}
+
+/* ============================================
+   TAB NAVIGATION
+   ============================================ */
+
+.ezdh-tabs {
+    display: flex;
+    gap: 0;
+    padding: 0 30px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.ezdh-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 24px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    outline: none !important;
+}
+
+.ezdh-tab:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.ezdh-tab .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s ease;
+}
+
+.ezdh-tab:hover {
+    background: rgba(163, 230, 53, 0.15);
+    border-top-color: rgba(163, 230, 53, 0.5);
+    box-shadow: 0 2px 8px rgba(163, 230, 53, 0.2);
+    transform: translateY(-1px);
+}
+
+.ezdh-tab:hover .dashicons {
+    transform: scale(1.1);
+}
+
+.ezdh-tab-active {
+    border-top-color: #a3e635 !important;
+    background: rgba(163, 230, 53, 0.1);
+}
+
+/* ============================================
+   CONTENT WRAPPER
+   ============================================ */
+
+.ezdh-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 30px;
+    padding: 30px;
+    min-height: calc(100vh - 250px);
+    position: relative;
+}
+
+@media screen and (max-width: 1200px) {
+    .ezdh-content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .ezdh-sidebar {
+        display: none;
+    }
+}
+
+.ezdh-main-content {
+    max-width: 100%;
+}
+
+/* ============================================
+   CARDS & SECTIONS
+   ============================================ */
+
+.ezdh-card {
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Code blocks in diagnostics */
+.ezdh-code {
+    background: rgba(163, 230, 53, 0.15);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+    color: #a3e635;
+    font-size: 0.9em;
+}
+
+/* Token display box */
+.ezdh-token-display {
+    margin-top: 15px;
+    padding: 12px;
+    background: rgba(163, 230, 53, 0.08);
+    border-left: 3px solid #a3e635;
+    border-radius: 4px;
+}
+
+.ezdh-token-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+    background: #1a2028 !important;
+    border: 1px solid rgba(163, 230, 53, 0.2);
+    border-radius: 4px;
+    color: #a3e635 !important;
+    resize: vertical;
+    cursor: pointer;
+}
+
+.ezdh-token-textarea:focus {
+    outline: none;
+    background: #1f252e !important;
+    border-color: rgba(163, 230, 53, 0.4);
+}
+
+.ezdh-card h3 {
+    margin: 0 0 16px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #a3e635;
+}
+
+.ezdh-card h3 .dashicons {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.ezdh-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 25px 2px;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.ezdh-intro {
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+/* Adjust sidebar to align with section title */
+.ezdh-main-content > .ezdh-section-title:first-child {
+    margin-top: 0;
+}
+
+.ezdh-main-content > .ezdh-section-title:first-child ~ .ezdh-intro {
+    margin-top: -5px;
+}
+
+/* ============================================
+   DASHBOARD GRID
+   ============================================ */
+
+.ezdh-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.ezdh-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.ezdh-card-icon .dashicons {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.ezdh-icon-success {
+    background: rgba(163, 230, 53, 0.2);
+    color: #a3e635;
+}
+
+.ezdh-icon-primary {
+    background: rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+}
+
+.ezdh-icon-info {
+    background: rgba(168, 85, 247, 0.2);
+    color: #a855f7;
+}
+
+/* ============================================
+   QUICK STATS
+   ============================================ */
+
+.ezdh-quick-stats {
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(163, 230, 53, 0.1);
+}
+
+.ezdh-quick-stats h3 {
+    margin: 0 0 20px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #a3e635;
+}
+
+.ezdh-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+}
+
+.ezdh-stat {
+    text-align: center;
+    padding: 20px 16px;
+    border-radius: 8px;
+    background: rgba(163, 230, 53, 0.08);
+    border: 1px solid rgba(163, 230, 53, 0.15);
+    transition: all 0.3s ease;
+}
+
+.ezdh-stat:hover {
+    background: rgba(163, 230, 53, 0.12);
+    border-color: rgba(163, 230, 53, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(163, 230, 53, 0.15);
+}
+
+.ezdh-stat-value {
+    display: block;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #a3e635;
+    margin-bottom: 6px;
+    line-height: 1;
+}
+
+.ezdh-stat-label {
+    display: block;
+    font-size: 0.875rem;
+    opacity: 0.85;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   THEME SELECTOR
+   ============================================ */
+
+.ezdh-theme-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.ezdh-theme-option {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.ezdh-theme-option:hover {
+    border-color: rgba(163, 230, 53, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(163, 230, 53, 0.15);
+}
+
+.ezdh-theme-option.active {
+    border-color: #a3e635;
+    background: rgba(163, 230, 53, 0.05);
+}
+
+.ezdh-theme-preview {
+    width: 100%;
+    height: 120px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ezdh-theme-preview-dark {
+    background: #0f1419;
+}
+
+.ezdh-theme-preview-light {
+    background: #f9fafb;
+}
+
+.ezdh-preview-header {
+    height: 20px;
+    margin: 8px;
+    border-radius: 3px;
+}
+
+.ezdh-theme-preview-dark .ezdh-preview-header {
+    background: rgba(163, 230, 53, 0.2);
+}
+
+.ezdh-theme-preview-light .ezdh-preview-header {
+    background: rgba(34, 197, 94, 0.2);
+}
+
+.ezdh-preview-content {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ezdh-preview-card {
+    height: 16px;
+    border-radius: 3px;
+}
+
+.ezdh-theme-preview-dark .ezdh-preview-card {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.ezdh-theme-preview-light .ezdh-preview-card {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.ezdh-theme-info h4 {
+    margin: 0 0 6px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.ezdh-theme-info p {
+    margin: 0;
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+.ezdh-theme-active-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #a3e635;
+    color: #0f1419;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* ============================================
+   TOGGLE SWITCHES
+   ============================================ */
+
+.ezdh-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.ezdh-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.ezdh-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    border-radius: 26px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.ezdh-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.ezdh-toggle input:checked + .ezdh-toggle-slider {
+    background-color: #a3e635;
+    border-color: #a3e635;
+}
+
+.ezdh-toggle input:checked + .ezdh-toggle-slider:before {
+    transform: translateX(24px);
+    background-color: #0f1419;
+}
+
+.ezdh-toggle input:focus + .ezdh-toggle-slider {
+    box-shadow: 0 0 1px #a3e635;
+}
+
+/* ============================================
+   SETTINGS GRID
+   ============================================ */
+
+.ezdh-settings-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.ezdh-setting-item {
+    padding: 16px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ezdh-setting-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.ezdh-setting-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.ezdh-setting-label .dashicons {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.ezdh-setting-description {
+    margin: 0;
+    font-size: 0.875rem;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+/* ============================================
+   TWO COLUMN LAYOUT
+   ============================================ */
+
+.ezdh-two-column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    .ezdh-two-column {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
+
+.ezdh-form-field {
+    margin-bottom: 16px;
+}
+
+.ezdh-form-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.ezdh-form-field input[type="text"],
+.ezdh-form-field input[type="password"],
+.ezdh-form-field input[type="url"],
+.ezdh-form-field input[type="number"],
+.ezdh-form-field select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+}
+
+.ezdh-form-field input:focus,
+.ezdh-form-field select:focus {
+    outline: none;
+    border-color: #a3e635;
+    box-shadow: 0 0 0 3px rgba(163, 230, 53, 0.1);
+}
+
+/* ============================================
+   BADGES & STATUS
+   ============================================ */
+
+.ezdh-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.ezdh-badge-success {
+    background: rgba(163, 230, 53, 0.2);
+    color: #a3e635;
+}
+
+.ezdh-badge-warning {
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+}
+
+.ezdh-status-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+}
+
+.ezdh-status-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ezdh-status-list li:last-child {
+    border-bottom: none;
+}
+
+.ezdh-status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.ezdh-label {
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+/* ============================================
+   NOTICES
+   ============================================ */
+
+.ezdh-notice {
+    padding: 16px 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border-left: 4px solid;
+}
+
+.ezdh-notice-success {
+    background: rgba(163, 230, 53, 0.1);
+    border-left-color: #a3e635;
+}
+
+.ezdh-notice-error {
+    background: rgba(239, 68, 68, 0.1);
+    border-left-color: #ef4444;
+}
+
+.ezdh-success-message {
+    color: #a3e635;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.ezdh-warning-message {
+    color: #fbbf24;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.ezdh-info-box {
+    padding: 20px;
+    border-radius: 6px;
+    background: rgba(59, 130, 246, 0.1);
+    border-left: 4px solid #3b82f6;
+    margin-top: 20px;
+}
+
+.ezdh-info-box h4 {
+    margin: 0 0 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #3b82f6;
+}
+
+.ezdh-info-box ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.ezdh-info-box li {
+    margin-bottom: 8px;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+
+.ezdh-sidebar {
+    position: sticky;
+    top: 30px;
+    height: fit-content;
+}
+
+.ezdh-sidebar-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ezdh-sidebar-card:first-child {
+    margin-top: 0;
+}
+
+.ezdh-sidebar-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #a3e635;
+}
+
+.ezdh-tips-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ezdh-tips-list li {
+    padding: 10px 0;
+    padding-left: 24px;
+    position: relative;
+}
+
+.ezdh-tips-list li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #a3e635;
+    font-weight: bold;
+}
+
+.ezdh-promo {
+    background: linear-gradient(135deg, rgba(163, 230, 53, 0.1), rgba(132, 204, 22, 0.1));
+    border: 2px solid rgba(163, 230, 53, 0.3);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.ezdh-footer {
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.ezdh-footer p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.ezdh-footer a {
+    color: #a3e635;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.ezdh-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.button {
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+}
+
+.ezdh-sidebar-card .button {
+    background: #a3e635 !important;
+    border-color: #a3e635 !important;
+    color: #0b0f12 !important;
+}
+
+.ezdh-sidebar-card .button:hover {
+    background: #84cc16 !important;
+    border-color: #84cc16 !important;
+}
+
+.button-primary {
+    background: #a3e635 !important;
+    border-color: #a3e635 !important;
+    color: #0b0f12 !important;
+}
+
+.button-primary:hover {
+    background: #84cc16 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(163, 230, 53, 0.3);
+}
+
+.button-small {
+    padding: 6px 12px !important;
+    font-size: 0.875rem !important;
+}
+
+.button-secondary {
+    background: rgba(163, 230, 53, 0.1) !important;
+    border-color: rgba(163, 230, 53, 0.3) !important;
+    color: #a3e635 !important;
+}
+
+.button-secondary:hover {
+    background: rgba(163, 230, 53, 0.15) !important;
+    border-color: rgba(163, 230, 53, 0.5) !important;
+}
+
+.ezdh-website-link {
+    color: #a3e635 !important;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.ezdh-website-link:hover {
+    color: #84cc16 !important;
+    text-decoration: underline;
+}
+
+.mt-2 {
+    margin-top: 8px;
+}
+
+/* ============================================
+   COPY INPUT
+   ============================================ */
+
+.ezdh-copy {
+    font-family: 'Courier New', monospace;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    font-size: 13px;
+}
+
+.ezdh-copy:focus {
+    outline: 2px solid #a3e635;
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+
+.ezdh-dark {
+    background-color: #0b0f12;
+    color: #ffffff;
+}
+
+.ezdh-dark .ezdh-title {
+    color: #a3e635;
+}
+
+.ezdh-dark .ezdh-tab {
+    color: #d1d5db;
+}
+
+.ezdh-dark .ezdh-tab:hover {
+    color: #ffffff;
+}
+
+.ezdh-dark .ezdh-tab-active {
+    color: #a3e635;
+}
+
+.ezdh-dark .ezdh-card {
+    background-color: #131a1f;
+}
+
+.ezdh-dark .ezdh-quick-stats {
+    background-color: #131a1f;
+    border-color: rgba(163, 230, 53, 0.1);
+}
+
+.ezdh-dark .ezdh-stat {
+    background: rgba(163, 230, 53, 0.08);
+    border-color: rgba(163, 230, 53, 0.15);
+}
+
+.ezdh-dark .ezdh-stat:hover {
+    background: rgba(163, 230, 53, 0.12);
+    border-color: rgba(163, 230, 53, 0.25);
+}
+
+.ezdh-dark .ezdh-sidebar-card {
+    background-color: #131a1f;
+}
+
+.ezdh-dark input[type="text"],
+.ezdh-dark input[type="password"],
+.ezdh-dark input[type="url"],
+.ezdh-dark input[type="number"],
+.ezdh-dark select {
+    background-color: #1f2937 !important;
+    color: #fff !important;
+    border-color: #374151 !important;
+}
+
+.ezdh-dark .ezdh-copy {
+    background: #1f2937;
+    color: #a3e635;
+    border-color: #374151;
+}
+
+.ezdh-dark .ezdh-spinner {
+    border-color: rgba(163, 230, 53, 0.3);
+    border-top-color: #a3e635;
+}
+
+/* ============================================
+   LIGHT MODE
+   ============================================ */
+
+.ezdh-light {
+    background-color: #f9fafb;
+    color: #1f2937;
+}
+
+.ezdh-light .ezdh-title {
+    color: #16a34a;
+}
+
+.ezdh-light .ezdh-header {
+    border-bottom-color: #e5e7eb;
+}
+
+.ezdh-light .ezdh-tabs {
+    background: #ffffff;
+    border-bottom-color: #e5e7eb;
+}
+
+.ezdh-light .ezdh-tab {
+    color: #6b7280;
+}
+
+.ezdh-light .ezdh-tab:hover {
+    color: #1f2937;
+    background: rgba(34, 197, 94, 0.15);
+    border-top-color: rgba(34, 197, 94, 0.5);
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.2);
+}
+
+.ezdh-light .ezdh-tab-active {
+    color: #16a34a;
+    border-top-color: #22c55e !important;
+    background: rgba(34, 197, 94, 0.08);
+}
+
+.ezdh-light .ezdh-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+}
+
+.ezdh-light .ezdh-quick-stats {
+    background-color: #ffffff;
+    border: 1px solid rgba(34, 197, 94, 0.15);
+}
+
+.ezdh-light .ezdh-stat {
+    background: rgba(34, 197, 94, 0.06);
+    border: 1px solid rgba(34, 197, 94, 0.15);
+}
+
+.ezdh-light .ezdh-stat:hover {
+    background: rgba(34, 197, 94, 0.1);
+    border-color: rgba(34, 197, 94, 0.25);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.12);
+}
+
+.ezdh-light .ezdh-stat-value {
+    color: #16a34a;
+}
+
+.ezdh-light .ezdh-stat-label {
+    opacity: 0.75;
+    color: #374151;
+}
+
+.ezdh-light .ezdh-theme-option {
+    border-color: #e5e7eb;
+}
+
+.ezdh-light .ezdh-theme-option:hover {
+    border-color: rgba(34, 197, 94, 0.4);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.12);
+}
+
+.ezdh-light .ezdh-theme-option.active {
+    border-color: #22c55e;
+    background: rgba(34, 197, 94, 0.05);
+}
+
+.ezdh-light .ezdh-theme-active-badge {
+    background: #22c55e;
+    color: #ffffff;
+}
+
+.ezdh-light .ezdh-toggle-slider {
+    background-color: #e5e7eb;
+    border-color: #d1d5db;
+}
+
+.ezdh-light .ezdh-toggle-slider:before {
+    background-color: #ffffff;
+}
+
+.ezdh-light .ezdh-toggle input:checked + .ezdh-toggle-slider {
+    background-color: #22c55e;
+    border-color: #22c55e;
+}
+
+.ezdh-light .ezdh-toggle input:checked + .ezdh-toggle-slider:before {
+    background-color: #ffffff;
+}
+
+.ezdh-light .ezdh-setting-item {
+    background: #f9fafb;
+    border-color: #e5e7eb;
+}
+
+.ezdh-light .ezdh-section-title {
+    color: #111827;
+}
+
+.ezdh-light .ezdh-theme-btn {
+    background: rgba(34, 197, 94, 0.1) !important;
+    color: #16a34a !important;
+    border: 1px solid rgba(34, 197, 94, 0.3) !important;
+}
+
+.ezdh-light .ezdh-theme-btn:hover {
+    background: rgba(34, 197, 94, 0.15) !important;
+    border-color: rgba(34, 197, 94, 0.5) !important;
+}
+
+.ezdh-light .ezdh-card h3 {
+    color: #16a34a;
+}
+
+.ezdh-light .ezdh-sidebar-card h3 {
+    color: #16a34a;
+}
+
+.ezdh-light .ezdh-sidebar-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+}
+
+.ezdh-light .ezdh-sidebar-card .button {
+    background: #16a34a !important;
+    border-color: #16a34a !important;
+    color: #ffffff !important;
+}
+
+.ezdh-light .ezdh-sidebar-card .button:hover {
+    background: #15803d !important;
+    border-color: #15803d !important;
+}
+
+.ezdh-light .ezdh-stat {
+    background: #f3f4f6;
+}
+
+.ezdh-light .ezdh-stat-value {
+    color: #16a34a;
+}
+
+.ezdh-light input[type="text"],
+.ezdh-light input[type="password"],
+.ezdh-light input[type="url"],
+.ezdh-light input[type="number"],
+.ezdh-light select {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+    border-color: #d1d5db !important;
+}
+
+.ezdh-light input:focus,
+.ezdh-light select:focus {
+    border-color: #22c55e !important;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1) !important;
+}
+
+.ezdh-light .ezdh-copy {
+    background: #f9fafb;
+    color: #16a34a;
+    border-color: #d1d5db;
+}
+
+.ezdh-light .ezdh-copy:focus {
+    background: #ffffff;
+    border-color: #22c55e;
+}
+
+.ezdh-light .button-primary {
+    background: #22c55e !important;
+    border-color: #22c55e !important;
+    color: #ffffff !important;
+}
+
+.ezdh-light .button-primary:hover {
+    background: #16a34a !important;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.ezdh-light .button-secondary {
+    background: rgba(34, 197, 94, 0.1) !important;
+    border-color: rgba(34, 197, 94, 0.3) !important;
+    color: #16a34a !important;
+}
+
+.ezdh-light .button-secondary:hover {
+    background: rgba(34, 197, 94, 0.15) !important;
+    border-color: rgba(34, 197, 94, 0.5) !important;
+}
+
+.ezdh-light .ezdh-website-link {
+    color: #16a34a !important;
+}
+
+.ezdh-light .ezdh-website-link:hover {
+    color: #15803d !important;
+}
+
+.ezdh-light .ezdh-quick-stats h3 {
+    color: #16a34a;
+}
+
+.ezdh-light .ezdh-badge-success {
+    background: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
+}
+
+.ezdh-light .ezdh-notice-success {
+    background: rgba(34, 197, 94, 0.1);
+    border-left-color: #22c55e;
+}
+
+.ezdh-light .ezdh-success-message {
+    color: #16a34a;
+}
+
+.ezdh-light .ezdh-footer {
+    border-top-color: #e5e7eb;
+}
+
+.ezdh-light .ezdh-footer a {
+    color: #16a34a;
+}
+
+.ezdh-light .ezdh-spinner {
+    border-color: rgba(22, 163, 74, 0.3);
+    border-top-color: #16a34a;
+}
+
+.ezdh-light .ezdh-status-list li {
+    border-bottom-color: #e5e7eb;
+}
+
+.ezdh-light .ezdh-icon-success {
+    background: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
+}
+
+/* Light mode code blocks */
+.ezdh-light .ezdh-code {
+    background: rgba(34, 197, 94, 0.15);
+    color: #15803d;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.ezdh-light .ezdh-token-display {
+    background: rgba(34, 197, 94, 0.08);
+    border-left-color: #22c55e;
+}
+
+.ezdh-light .ezdh-token-textarea {
+    background: #f9fafb !important;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    color: #15803d !important;
+}
+
+.ezdh-light .ezdh-token-textarea:focus {
+    background: #ffffff !important;
+    border-color: rgba(34, 197, 94, 0.4);
+    outline: none;
+}
